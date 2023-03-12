@@ -1,6 +1,10 @@
 - [Kidney exchange program](#kidney-exchange-program)
   * [Environment](#environment)
   * [Organization](#organization)
+- [Content](#Content)
+  * [DETERMINISTIC VERSION](##DETERMINISTIC-VERSION)
+  * [STOCHATIC VERSION](##STOCHATIC-VERSION)
+  * [STOCHATIC VERSION TACKING INTO ACCOUNT THE RISK](##STOCHATIC-VERSION-TACKING-INTO-ACCOUNT-THE-RISK)
 
 # Kidney exchange program
 
@@ -8,7 +12,7 @@ Kidney exchange is nowaday a big issue. Several people suffer from kidney proble
 We propose here an approach to this problem through the framework of stochastic optimization.
 This repository has been made within our "Optimization under uncertainty" course given by Jeremy Omer at INSA Rennes.
 
-We chose to treat the problem as following : our goal is to make groups of people (cluster) which are linked together. Within these groups the crossed tests will be proceeded and then after these tests we will create cycles to proceed the real exchange.
+We chose to treat the problem as following : our goal is to make groups of people (cluster) which are linked together. Within these groups the crossed tests will be proceeded and then after these tests we will create cycles to proceed the real exchange. Cluster are displayed in the same color :
 
 ![image](image/results_example.png)
 
@@ -34,9 +38,9 @@ This repository contains multiple folders :
 - `notebook` : this folder contains the notebook for our final evaluation
 - `utils` : this folder contains all the function for the secondary tasks such as read and process the data, plot the graphs, ...
 
-## CONTENT
+# Content
 
-### DETERMINISTIC VERSION
+## DETERMINISTIC VERSION
 
 Our first idea for this problem was to think only about cycles. We adopt the philosophy that we select cycles and we only perform the cross-tests among the cycles we have selected.
 
@@ -45,8 +49,8 @@ Thus, we define the following data:
 - $C_K$ : the set of cycles of length at most $K$.
 - $C_K(i)$ : the set of cycles of length at most $K$, which contain the vertex $i$.
 - $\forall c \in C_K \quad w_c$ : denote the utility of cycle $c$.
-- $omega~\in~\Omega$ : defines a realization of the uncertainties. We will also speak of a scenario. It is a possible realization of the hazard that weighs on the different arcs.
-- $\forall ~c~\in C_K\quad \xi_c(\omega) \in \{0, 1\} = 1$ : if and only if we cannot select the cycle $c$ (the tests are bad) for the scenario $\omega$
+- $\omega~\in~\Omega$ : defines a realization of the uncertainties. We will also speak of a scenario. It is a possible realization of the hazard that weighs on the different arcs.
+- $\forall c\in C_K\quad \xi_c(\omega) \in \{0, 1\} = 1$ : if and only if we cannot select the cycle $c$ (the tests are bad) for the scenario $\omega$
 
 We define the following variables
 
@@ -97,7 +101,6 @@ We will consider the variables:
 
 We define the *cluster problem* ($\mathbb{CP}$) as follows:
 
-Translated with www.DeepL.com/Translator (free version)
 
 $$
 \begin{equation}
@@ -114,6 +117,8 @@ $$
 
 
 ## STOCHATIC VERSION TACKING INTO ACCOUNT THE RISK
+
+We are given a set of specifications, we are given a set of specifications and we are ordered to produce a solution that in $\alpha\%$ of cases allows to save a minimum number of patients. We thus decide to introduce the notion of *Conditional Value at Risk* or $CVaR$ to solve the problem. This method allows us to produce a solution which ensures that, with a certain level of risk, we do not go below a certain level.
 
 $$
 \begin{equation}
