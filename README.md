@@ -60,7 +60,7 @@ We define the following variables
 The problem can be modeled as follows:
 
 
-$$ \begin{equation}
+$ \begin{equation}
 	(\mathbb{CRP}) := \left\{\begin{aligned}
         \underset{x}{\min} \quad & - \sum_{c \in C_K} x_cw_c +\mathbb{E}_{\omega}\left(\underset{y}{\min} \left[\sum_{c \in C_K} y_c(\omega)w_c\right]\right)\\
          s.c \quad &\sum_{c\in C_K(i)}x_c\leq 1~\forall i \in V\\ % contrainte déterministe
@@ -69,7 +69,7 @@ $$ \begin{equation}
          & x_c \in \{0,1\} \quad \forall c \in C_K\\
          & y_c(\omega) \in \{0,1\} \quad \forall c \in C_K\quad \forall \omega \in \Omega
 	\end{aligned}\right.
-\end{equation} $$
+\end{equation} $
 
 Which is equivalent to :
 
@@ -81,7 +81,7 @@ We finally have the following problem:
 $$ \begin{equation}
 	(\mathbb{CRP}) := \left\{\begin{aligned}
         \underset{x}{\max} \quad & \sum_{c \in C_K} x_c\hat{w}_c\\
-         s.c \quad &\sum_{c\in C_K(i)}x_c\leq 1~\forall i \in V\\ % contrainte déterministe
+         s.c \quad &\sum_{c\in C_K(i)}x_c\leq 1~\forall i \in V\\ 
          & x_c \in \{0,1\} \quad \forall c \in C_K\\
 	\end{aligned}\right.
 \end{equation} $$
