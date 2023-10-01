@@ -78,13 +78,13 @@ Thus we note $tilde{w}_c = w_c \times \mathbb{P}\{\xi_c(\omega) = 0\}$, the new 
 
 We finally have the following problem:
 
-$$ \begin{equation}
+$ \begin{equation}
 	(\mathbb{CRP}) := \left\{\begin{aligned}
         \underset{x}{\max} \quad & \sum_{c \in C_K} x_c\hat{w}_c\\
          s.c \quad &\sum_{c\in C_K(i)}x_c\leq 1~\forall i \in V\\ 
          & x_c \in \{0,1\} \quad \forall c \in C_K\\
 	\end{aligned}\right.
-\end{equation} $$
+\end{equation} $
 
 ## STOCHATIC VERSION
 
@@ -98,7 +98,7 @@ We will consider the variables:
 We define the *cluster problem* ($\mathbb{CP}$) as follows:
 
 
-$$ \begin{equation}
+$ \begin{equation}
 	\mathbb{CP}:= \left\{\begin{aligned}
         \underset{x}{\max} &\quad \mathbb{E}_{\omega}\left[\underset{y}{\max}\sum_{c \in C_K}y_c(\omega) w_c\right]\\
          s.c &\quad x_{i,j} = x_{j,i}\quad \forall (i,j) \in V\times V\\
@@ -107,14 +107,14 @@ $$ \begin{equation}
          &\quad y_c(\omega) \leq x_{i,j}\xi_{i,j}(\omega) \quad \forall c \in C_k, ~\forall (i,j) \in c,~ \forall \omega \in \Omega \\
          &\quad \sum_{c \in C_K(i)} y_c(\omega) \leq 1 \quad \forall i \in V,\quad\forall \omega \in \Omega\\
 	\end{aligned}\right.
-\end{equation} $$
+\end{equation} $
 
 
 ## STOCHATIC VERSION TACKING INTO ACCOUNT THE RISK
 
 We are given a set of specifications, we are given a set of specifications and we are ordered to produce a solution that in $\alpha\%$ of cases allows to save a minimum number of patients. We thus decide to introduce the notion of *Conditional Value at Risk* or $CVaR$ to solve the problem. This method allows us to produce a solution which ensures that, with a certain level of risk, we do not go below a certain level.
 
-$$ \begin{equation}
+$ \begin{equation}
 	\mathbb{RACP}:= \left\{\begin{aligned}
         \underset{x,t}{\min} &\quad t + \frac{1}{1-\alpha}\mathbb{E}_{\omega}\left[\left(\underset{y}{\min}\left( - \sum_{c \in C_K}y_c(\omega) w_c\right) - t\right)+\right]\\
          s.c &\quad x_{i,j} = x_{j,i}\quad \forall (i,j) \in V\times V\\
@@ -123,4 +123,4 @@ $$ \begin{equation}
          &\quad y_c(\omega) \leq x_{i,j}\xi_{i,j}(\omega) \quad \forall c \in C_k, ~\forall (i,j) \in c,~ \forall \omega \in \Omega \\
          &\quad \sum_{c \in C_K(i)} y_c(\omega) \leq 1 \quad \forall i \in V,\quad\forall \omega \in \Omega\\
 	\end{aligned}\right.
-\end{equation} $$
+\end{equation} $
